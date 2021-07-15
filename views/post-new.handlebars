@@ -1,0 +1,36 @@
+<div class="create_post">
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <form action="/post/new" method="post">
+                    <h1 class="text-center title">Create A Post</h1>
+                        <legend>Add a post</legend>
+                        <!-- Book -->
+                         <div class="form-group">
+                            <label for="post-book">Book Name</label>
+                            <input type="text" name="book" class="form-control" id="post-book" placeholder="Book Name">
+                        </div>
+
+                        <!-- Fandom -->
+                        <div class="form-group">
+                            <label for="post-fandom">Fandom Name</label>
+                            <input type="text" name="fandom" class="form-control" id="post-fandom" placeholder="Fandom Name">
+                        </div>
+
+                        <!-- Summary -->
+                        <div class="form-group">
+                            <label for="post-summary">Summary</label>
+                            <textarea name="summary" class="form-control" id="post-summary" placeholder="Summary"></textarea>
+                        </div>
+                        
+                        <!-- Submit -->
+                        <div class='text-right'>
+                            <button type="submit" class="btn btn-primary">Create Post</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

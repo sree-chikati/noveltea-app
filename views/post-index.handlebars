@@ -1,0 +1,29 @@
+<!-- MAIN CONTENT -->
+<section class="posts text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- All Posts Content -->
+                <div class="play">
+                    <h2 class="title">All Posts</h2>
+                    <div class="container">
+                        <div class="row">
+                            {{#each posts}}
+                            <div class="col-md-4">
+                                <div class="card p-2 m-2">
+                                    <div class="card-body">
+                                        <h5 class="lead card-title">{{this.book}}</h5>
+                                        <a href="/fandom/{{this.fandom}}">{{this.fandom}}</a>
+                                        <div><small>Created by: {{this.author.username}}</small></div>
+                                        <a href="/posts/{{this._id}}" class="btn btn-primary btn-md">View Post</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
