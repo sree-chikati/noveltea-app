@@ -1,0 +1,35 @@
+<ul class="navbar-nav ml-auto">
+    <!-- View post Route -->
+    <li class="nav-item">
+        <a href="/posts">
+            Posts
+        </a>
+    </li>
+    {{#if currentUser}}
+    <!-- Add post Route -->
+    <li class="nav-item">
+        <a href="/post/new">
+            Add post
+        </a>
+    </li>
+    <!-- Add post Route -->
+    <li class="nav-item">
+        <a href="/logout">
+            Logout
+        </a>
+    </li>
+    {{else}}
+    <!-- Login Route -->
+    <li class="nav-item">
+        <a href="/login">
+            Login
+        </a>
+    </li>
+    <!-- Signup Route -->
+    <li>
+        <a href="/sign-up">
+            Sign Up
+        </a>
+    </li>
+    {{/if}}
+</ul>
