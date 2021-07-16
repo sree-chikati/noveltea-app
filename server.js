@@ -24,6 +24,8 @@ var checkAuth = (req, res, next) => {
 
 // All app.use
 app.use('*/css',express.static('public/css')); // Allows us to use content from public file
+// app.use('*/images',express.static('public/images'));
+app.use(express.static('images')); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator()); // Add after body parser initialization!
