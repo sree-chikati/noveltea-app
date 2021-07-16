@@ -99,9 +99,7 @@ h1{
   color: black!important;
 }
 
-/*===== MAIN CONTENT =====*/
-
-/*------ Banner Section ------*/
+/*============= MAIN CONTENT =============*/
 .banner{
   background-image: linear-gradient(to right, #EBE1CE, #E2EBCE);
   padding: 10rem 0;
@@ -117,35 +115,105 @@ h1{
   color: #301f11;
 }
 
-/*------ Services Section ------*/
-
-#services {
-  padding: 80px 0;
+/*============= ABOUT =============*/
+.about{ 
+  margin: 7.5rem!important;
 }
 
-.services-img {
-  margin-top: 20px;
+.about .story{
+  color:#343a40;
+  font-size: 1rem ;
 }
 
-.services {
-  padding: 20px;
+.about b{
+  font-size: 1.5rem ;
+  font-weight: bold;
 }
 
-.services h4{
-  padding: 5px;
-  margin-top: 25px;
+/*============= SEARCH =============*/
+.search-content{
+  height: 100%;
+  padding: 7rem;
+}
+ .center {
+   margin: auto;
+ }
+ 
+ #header {
+   font-size: 3rem;
+ }
+ 
+ .book-list {
+   margin-top: 50px;
+   visibility: hidden;
+ }
+
+/*============= POSTS =============*/
+.posts {
+  padding: 7.5rem;
 }
 
-
-/*------ Forms Section ------*/
-/*===== Create post =====*/
+/*============= CREATE POST =============*/
 .create_post {
   padding: 60px 0;
 }
 
-/*===== Show all chracters =====*/
-.posts {
-  padding: 100px 0;
+/*============= PROFILE =============*/
+.link-menu {
+  color: black;
+}
+
+.topbar-profile-photo {
+  width: 1.5em; 
+  height: 1.5em; 
+  position: relative;
+}
+
+.story-profile-photo {
+  width: 56px; 
+  height: 56px; 
+  position: relative; 
+  border-width: 2px !important;
+}
+
+.post-profile-photo {
+  width: 46px; 
+  height: 46px; 
+  position: relative; 
+  border-width: 2px !important;
+}
+
+.sidenav-profile-photo {
+  width: 56px; 
+  height: 56px; 
+  position: relative; 
+}
+
+.comment-box {
+  border-top: 1px solid lightgray;
+}
+
+.input-post {
+  outline: none;
+}
+
+.profile-info {
+  font-size: 14px;
+}
+
+.profile-info-username {
+  display: block;
+  font-weight: 700;
+}
+
+.sugest-profile-photo {
+  width: 46px; 
+  height: 46px;  
+  position: relative;
+}
+
+.sugest-username {
+  font-size: 14px
 }
 
 

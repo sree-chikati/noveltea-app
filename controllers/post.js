@@ -8,6 +8,24 @@ module.exports = app => {
       console.log('Home with current user is working')
       res.render('home', { currentUser })
     })
+
+    // ABOUT
+    app.get('/about', (req, res) => {
+      var currentUser = req.user;
+      res.render('about', { currentUser })
+    })
+
+    // PROFILE
+    app.get('/profile', (req, res) => {
+      var currentUser = req.user;
+      res.render('profile', { currentUser })
+    })
+
+    // SEARCH
+    app.get('/search', (req, res) => {
+      var currentUser = req.user;
+      res.render('search', { currentUser })
+    })
     
     // POSTS PAGE
     app.get('/posts', (req, res) => {
