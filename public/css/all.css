@@ -1,8 +1,8 @@
-/* ---- IMPORTS ---- */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Slab:wght@300&display=swap');
+/* ---- IMPORTS ---- */ 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200&display=swap');
 /* 
-font-family: 'Open Sans', sans-serif;
-font-family: 'Roboto Slab', serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Poppins', sans-serif;
 */
 /*-- Body Reset --*/
 *{
@@ -14,9 +14,10 @@ body {
   background: white;
 }
 
-h1 {
+h1{
+  font-family: 'Playfair Display', serif!important;
   text-transform: uppercase;
-  font-family: 'Roboto Slab', serif!important;
+  color: rgb(34, 27, 19);
 }
 
 .btn-primary{
@@ -24,41 +25,33 @@ h1 {
   padding: 8px 25px;
   border: none;
   border-radius: 20px;
-  background-image: linear-gradient(to right, #54ffac, #54a7ff);
+  background-image: linear-gradient(to right, #EBE1CE, #E2EBCE);
   color: black;
 }
 
 .title::before {
   content: '';
-  background-color: #54ffac;
-  height: 5px;
+  background-color: #8BC43F;
+  height: 2px;
   width: 200px;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  transform: translateY(63px);
+  transform: translateY(54px);
 }
 
 .title::after {
   content: '';
-  background-color: #54ffac;
+  background-color: #8BC43F;
   height: 10px;
   width: 50px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   display: block;
-  transform: translateY(18px);
+  transform: translateY(24px);
 }
 
-.modal-content{
-  background-color: #ff847ec7;
-}
-
-.modal-body li{
-  list-style: none;
-  color: white;
-}
 
 /*============= TOP BAR HEADER =============*/
 .top-bar {
@@ -78,44 +71,50 @@ h1 {
   font-weight: 600;
   letter-spacing: 0.1rem;
   padding: 0.5rem;
-  z-index: 1;
+  background-image: linear-gradient(to right, #EBE1CE, #E2EBCE);
+  z-index:1;
   border: none;
-  background-image: linear-gradient(to right, #54a7ff, #5331ff);
 }
 
 .navbar-nav li a{
-  color: white!important;
+  color: black!important;
   font-weight: 600px;
   float: right;
   text-align: left;
 }
 
-.nav-item.active,
-.nav-item:hover {
-  color: #54a7ff !important;
+.nav-item {
+  padding: 0.5rem 0;
+}
+
+.nav-link {
+  color: #5b5555!important;
+}
+
+.nav-link.active, .nav-link:hover{
+  color: #7B593F!important;
 }
 
 .navbar-toggler {
-  color: white!important;
+  color: black!important;
 }
 
 /*===== MAIN CONTENT =====*/
 
 /*------ Banner Section ------*/
 .banner{
-  background-image: linear-gradient(to right, #54a7ff, #5331ff);
-  color: white;
-  padding: 60px 0;
+  background-image: linear-gradient(to right, #EBE1CE, #E2EBCE);
+  padding: 10rem 0;
 
 }
 
 .banner h1{
-  color: white;
+  color: #301f11;
   font-size: 3rem;
 }
 
 .banner h4{
-  color: white;
+  color: #301f11;
 }
 
 /*------ Services Section ------*/
@@ -150,10 +149,14 @@ h1 {
 }
 
 
+/*============= JUMBOTRON =============*/
+.jumbrotron{
+  background-color: rgb(235, 225, 206)!important;
+}
+
 /*============= FOOTER =============*/
 footer{
-  background-image: linear-gradient(to right, #54a7ff, #5331ff);
-  color: white;
+  background-image: linear-gradient(to right, #EBE1CE, #E2EBCE);
   width: 100%;
   text-align: center;
   display: flex;
@@ -164,7 +167,7 @@ footer{
 }
 
 footer h3{
-    color: white;
+    color: #301f11;
     font-size: 15px;
     text-transform: uppercase;
 }
@@ -175,16 +178,16 @@ footer p{
 }
 
 footer span{
-    color:#54ffac;;
+    color:#B27F59;
 }
 .github{
-  color: white;
+  color: white!important;
   text-decoration: none;
   padding: 1rem 1rem 0 1rem;
 }
 
 .github:hover{
-  color: #54ffac;
+  color: #B27F59;
 }
 
 
