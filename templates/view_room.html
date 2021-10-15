@@ -1,0 +1,152 @@
+{% extends 'base.html' %}{% block content %}
+
+<section class="chat-room">
+    <div class="container">
+        <a href="{{ url_for('profile') }}">
+            <i class="fas fa-arrow-circle-left fa-3x"></i>
+        </a>
+    </div>
+    <h1 class="m-4 pb-4 title text-center">{{ room.name }}</h1>
+
+    <div class="row">
+        <!-- Users box-->
+        <div class="col-md-3 messages-box">
+          <div class="bg-white">
+            <div class="member-box">
+                <h5>Members</h5>
+                <ul>
+                    {% for member in room_members %}
+                        <li>{{ member._id.username }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="text-center p-4">
+                <button type="button" class="btn btn-primary" id="load_older_messages_btn">Load Older Messages</button>
+            </div>
+          </div>
+        </div>
+        <!-- Chat Box-->
+        <div class="col-md-9 px-0">
+            <div id = "messages" class="p-2 chat-box bg-white">
+                <!-- Sender Message-->
+                {% for message in messages %}
+                <div class="media-body ml-3">
+                    <div class="rounded py-2 mb-2">
+                    <p class="text-small mb-0 text-muted">{{ message.text }}</p>
+                    </div>
+                    <p class="small text-muted">{{ message.sender }} | {{ message.created_at }}</p>
+                </div>
+                {% endfor %}
+            </div>
+    
+          <!-- Typing area -->
+          <form action="#" id="message_input_form" class="">
+            <div class="input-group">
+              <input type="text" id="message_input" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0">
+              <div class="input-group-append">
+                <button id="button-addon2" type="submit" class="btn btn-primary rounded-0"> <i class="fa fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </form>
+    
+        </div>
+      </div>
+    </div>    
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script>
+    const socket = io.connect("http://127.0.0.1:5000");
+
+    socket.on('connect', function () {
+        socket.emit('join_room', {
+            username: "{{ username }}",
+            room: "{{ room._id }}"
+        });
+
+        let message_input = document.getElementById('message_input');
+
+        document.getElementById('message_input_form').onsubmit = function (e) {
+            e.preventDefault();
+            let message = message_input.value.trim();
+            if (message.length) {
+                socket.emit('send_message', {
+                    username: "{{ username }}",
+                    room: "{{ room._id }}",
+                    message: message
+                })
+            }
+            message_input.value = '';
+            message_input.focus();
+        }
+    });
+
+    let page = 0;
+
+    document.getElementById("load_older_messages_btn").onclick = (e) => {
+        page += 1;
+        fetch("/rooms/{{ room._id }}/messages?page=" + page, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            response.json().then(messages => {
+                messages.reverse().forEach(message => prepend_message(message.text, message.sender, message.created_at));
+            })
+        })
+    };
+
+    function prepend_message(message, username, created_at) {
+        const newNode = document.createElement('div');
+        newNode.innerHTML = `
+        <div class="media-body ml-3">
+            <div class=" rounded py-2 mb-2">
+                <p class="text-small mb-0 text-muted">${message}</p>
+            </div>
+            <p class="small text-muted">${username} | ${created_at}</p>
+        </div>`;
+        const messages_div = document.getElementById('messages');
+        messages_div.insertBefore(newNode, messages_div.firstChild);
+    }
+
+    window.onbeforeunload = function () {
+        socket.emit('leave_room', {
+            username: "{{ username }}",
+            room: "{{ room._id }}"
+        })
+    };
+
+    socket.on('receive_message', function (data) {
+        console.log(data);
+        const newNode = document.createElement('div');
+        newNode.innerHTML = `
+        <div class="media-body ml-3">
+            <div class=" rounded py-2 mb-2">
+                <p class="text-small mb-0 text-muted">${data.message}</p>
+            </div>
+            <p class="small text-muted">${data.username} | ${data.created_at}</p>
+        </div>`;
+        document.getElementById('messages').appendChild(newNode);
+    });
+
+    socket.on('join_room_announcement', function (data) {
+        console.log(data);
+        if (data.username !== "{{ username }}") {
+            const newNode = document.createElement('div');
+            newNode.innerHTML = `<b>${data.username}</b> has joined the room`;
+            document.getElementById('messages').appendChild(newNode);
+        }
+    });
+
+    socket.on('leave_room_announcement', function (data) {
+        console.log(data);
+        const newNode = document.createElement('div');
+        newNode.innerHTML = `<b>${data.username}</b> has left the room`;
+        document.getElementById('messages').appendChild(newNode);
+    });
+
+</script>
+
+
+{% endblock %}
