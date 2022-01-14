@@ -7,6 +7,7 @@
  * [About this Project](#about-this-project)
  * [Functions to Highlight](#functions-to-highlight)
  * [Deployment](#deployment)
+ * [Demo](#demo)
  
 ## About this Project
 Noveltea is created to bring together readers to one place in which they can read their favorite books, join fandoms, and even share their expereince with the community.
@@ -42,3 +43,6 @@ On a development server
 # run
 npm start
 ```
+
+## Demo
+![alt text](2_28_gif.gif "Demo Giphy")
