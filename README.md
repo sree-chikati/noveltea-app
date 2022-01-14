@@ -19,6 +19,8 @@ The book search utilizes Google Books API to allow users to perform searches to 
 
 
 ## Deployment
+*❗️For <b>Enviornment Keys</b> please message me❗️*
+<br><br>
 Download
 ```bash
 git clone https://github.com/sree-chikati/noveltea-app/tree/posts-feature
@@ -34,7 +36,6 @@ Run the following commands from your virtual environment to install the needed p
 ```bash 
 npm install
 ```
-*For <b>Enviornment Keys</b> please message me.
 
 On a development server
 ```bash 
