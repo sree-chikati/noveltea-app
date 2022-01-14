@@ -1,5 +1,5 @@
 # Noveltea-📖🍵
-Winter Intensive (2022)<br>
+2.2 Winter Intensive (2022)<br>
 [Heroku Live Link (currently works without AWS3 setup)](https://noveltea-app.herokuapp.com/)
 
 
