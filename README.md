@@ -45,4 +45,4 @@ npm start
 ```
 
 ## Demo
-![alt text](2_28_gif.gif "Demo Giphy")posts
+![alt text](posts-feature-demo.gif "Demo Gif")
