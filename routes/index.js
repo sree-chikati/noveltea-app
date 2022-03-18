@@ -6,6 +6,12 @@ module.exports = (app) => {
     res.render('main');
   });
 
+  app.get('/best-books', (req, res) => {
+    res.render('best-books');
+  });
+
+  // LATEST BOOKS
+
   // PETS INDEX
   app.get('/', (req, res) => {
     const page = req.query.page || 1

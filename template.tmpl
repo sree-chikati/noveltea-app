@@ -1,0 +1,32 @@
+extends layout
+
+block content   
+
+    <!-- MAIN CONTENT -->
+    <div class="best-books">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="d-flex justify-content-center">Best Books of 2021</h1>
+                    <h4 class="d-flex justify-content-center py-4">According to Good Reads</h4>
+                    <!-- All Latest Necklaces -->
+                    <div class="new">
+                        <div class="container">
+                            <div class="row">
+                                {{ range . }}
+                                <div class="col-md-4">
+                                    <div class="card p-2 m-2">
+                                        <div class="card-body">
+                                            <h5 class="d-flex justify-content-center">{{ .Category }}</h5>
+                                        </div>
+                                        <img src={{ .Image }} class="card-img-top">
+                                    </div>
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

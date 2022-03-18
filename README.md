@@ -1,4 +1,6 @@
 # Noveltea-📖🍵
+[![Go Report Card](https://goreportcard.com/badge/github.com/sree-chikati/makeutility-final)](https://goreportcard.com/report/github.com/sree-chikati/noveltea-app/tree/book-scraper)
+
 2.2 Winter Intensive (2022)<br>
 [Heroku Live Link (currently works without AWS3 setup)](https://noveltea-app.herokuapp.com/)
 
@@ -24,7 +26,7 @@ The book search utilizes Google Books API to allow users to perform searches to 
 <br><br>
 Download
 ```bash
-git clone https://github.com/sree-chikati/noveltea-app/tree/posts-feature
+git clone https://github.com/sree-chikati/noveltea-app/tree/book-scraper
 git remote set-url origin git@github.com:YOUR_USERNAME/YOUR_REPO_NAME.git
 git push -u origin master
 ```
@@ -45,4 +47,4 @@ npm start
 ```
 
 ## Demo
-![alt text](posts-feature-demo.gif "Demo Gif")
+![alt text](book-scraper-demo.gif "Demo Gif")

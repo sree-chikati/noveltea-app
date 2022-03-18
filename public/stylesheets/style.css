@@ -131,6 +131,21 @@ h1{
   font-weight: bold;
 }
 
+/*============= BEST BOOKS =============*/
+.best-books{
+  background-image: linear-gradient(to right, #EBE1CE, #E2EBCE);
+  color: black;
+  padding: 75px 0;
+}
+
+.best-books h1{
+  color: black;
+  font-size: 3rem;
+}
+
+.best-books h4{
+  color: black;
+}
 
 /*============= SEARCH =============*/
 .search-content{
