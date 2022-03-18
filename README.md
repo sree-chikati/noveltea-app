@@ -18,7 +18,7 @@ The website requires that users signup/login and stores the autheticated informa
 The book search utilizes Google Books API to allow users to perform searches to find their favorite books.
 
 ## Functions to highlight
-* Posts Databse / AWS3 Image Linking / Pagination / Key Word Search
+* Web Scraping with GO and Colly / Created Static Site Generator / Display information on static site
 
 
 ## Deployment
